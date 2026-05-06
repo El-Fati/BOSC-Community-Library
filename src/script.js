@@ -6,7 +6,8 @@ async function loadResources() {
     document.getElementById('search').addEventListener('input', function () {
         const query = this.value.toLowerCase();
         const filtered = data.filter(item =>
-            item.title.toLowerCase().includes(query)
+            item.title.toLowerCase().includes(query) ||
+            item.title.toLowerCase().startsWith(query)
         );
         displayResources(filtered);
     });
