@@ -11,6 +11,15 @@ async function loadResources() {
         );
         displayResources(filtered);
     });
+    document.getElementById('category').addEventListener('change', function () {
+        const selected = this.value;
+
+        const filtered = selected === "all"
+            ? data
+            : data.filter(item => item.category === selected);
+
+        displayResources(filtered);
+    });
 }
 
 function displayResources(resources) {
