@@ -32,5 +32,13 @@ function displayResources(resources) {
         list.appendChild(li);
     });
 }
+function setLanguage(lang) {
+    const title = document.querySelector('h1');
 
+    if (lang === 'lg') {
+        title.innerText = "Ekitabo ky'Obusomi";
+    } else {
+        title.innerText = "BOSC Community Library";
+    }
+}
 loadResources();
